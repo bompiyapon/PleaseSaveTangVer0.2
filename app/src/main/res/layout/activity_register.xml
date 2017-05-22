@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.armfluke.pleasesavetang.Register"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <EditText
+        android:id="@+id/Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="40dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/Password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/PasswordText"
+        android:layout_width="0dp"
+        android:layout_height="33dp"
+        android:text="Password:"
+        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toLeftOf="@+id/Password"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswordReText"
+        android:layout_marginTop="73dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="73dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/UsernameText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="38dp"
+        app:layout_constraintTop_toBottomOf="@+id/Username"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/PasswordRe"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginRight="8dp" />
+
+
+    <EditText
+        android:id="@+id/PasswordRe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confirmed Password"
+        android:inputType="textPassword"
+        android:layout_marginEnd="42dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="27dp"
+        app:layout_constraintTop_toBottomOf="@+id/Password"
+        android:layout_marginRight="42dp" />
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:onClick="back"
+        android:text="Back"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Register"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="73dp" />
+
+    <Button
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="register"
+        android:text="Register"
+        android:layout_marginEnd="81dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="172dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toTopOf="@+id/Password"
+        android:layout_marginRight="81dp"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/Register" />
+
+    <TextView
+        android:id="@+id/UsernameText"
+        android:layout_width="104dp"
+        android:layout_height="25dp"
+        android:text="Username:"
+        android:textSize="20sp"
+        app:layout_constraintRight_toLeftOf="@+id/Username"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Username"
+        android:layout_marginEnd="5dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.82" />
+
+    <TextView
+        android:id="@+id/PasswordReText"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:text="Confirmed Password:"
+        android:textSize="17sp"
+        app:layout_constraintRight_toLeftOf="@+id/PasswordRe"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Back"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="105dp"
+        app:layout_constraintTop_toBottomOf="@+id/UsernameText"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="104dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

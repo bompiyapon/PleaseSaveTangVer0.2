@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.armfluke.pleasesavetang.Login"
+    tools:showIn="@layout/activity_login">
+
+    <EditText
+        android:id="@+id/Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="211dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.502" />
+
+    <EditText
+        android:id="@+id/PasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="33dp"
+        app:layout_constraintTop_toBottomOf="@+id/Username"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/Username" />
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:elevation="0dp"
+        android:onClick="login"
+        android:text="Login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordText"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/piggybank"
+        app:layout_constraintBottom_toTopOf="@+id/PleaseSaveTang"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.501" />
+
+    <TextView
+        android:id="@+id/PleaseSaveTang"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:text="PleaseSaveTang"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/Username"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintRight_toRightOf="@+id/imageView2"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/Register"
+        android:layout_width="64dp"
+        android:layout_height="0dp"
+        android:onClick="register"
+        android:text="Register"
+        android:textSize="16sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintRight_toRightOf="@+id/PasswordText"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="61dp"
+        app:layout_constraintLeft_toRightOf="@+id/Login"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/Login"
+        android:layout_marginTop="42dp"
+        app:layout_constraintTop_toTopOf="@+id/PasswordText" />
+
+</android.support.constraint.ConstraintLayout>
