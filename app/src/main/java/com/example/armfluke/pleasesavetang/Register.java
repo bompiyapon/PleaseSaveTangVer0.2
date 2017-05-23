@@ -23,19 +23,7 @@ public class Register extends AppCompatActivity {
         EditText passwordRe = (EditText)findViewById(R.id.PasswordRe);
         Contact qusername = db.getContact(username.getText().toString());
 
-        if(password.equals(passwordRe.getText().toString())) {
-
-            AlertDialog alertDialog = new AlertDialog.Builder(Register.this).create();
-            alertDialog.setTitle("Alert");
-            alertDialog.setMessage("Your password is not match");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            alertDialog.show();
-        }else{
+        if(password.getText().toString().equals(passwordRe.getText().toString())) {
             if (qusername.getUsername().equals(username.getText().toString())) {
                 AlertDialog alertDialog = new AlertDialog.Builder(Register.this).create();
                 alertDialog.setTitle("Alert");
@@ -63,6 +51,17 @@ public class Register extends AppCompatActivity {
                         });
                 alertDialog.show();
             }
+        }else{
+            AlertDialog alertDialog = new AlertDialog.Builder(Register.this).create();
+            alertDialog.setTitle("Alert");
+            alertDialog.setMessage("Your password is not match");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
         }
     }
 
