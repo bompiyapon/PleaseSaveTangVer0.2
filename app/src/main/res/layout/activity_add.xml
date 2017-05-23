@@ -41,15 +41,15 @@
         android:id="@+id/Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="DD/MM/YYY"
-        android:inputType="date"
-        tools:layout_constraintTop_creator="1"
         android:layout_marginStart="1dp"
         android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="DD/MM/YYYY"
+        android:inputType="date"
+        app:layout_constraintLeft_toLeftOf="@+id/Note"
         app:layout_constraintTop_toBottomOf="@+id/Note"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/Note" />
+        tools:layout_constraintTop_creator="1" />
 
     <Spinner
         android:id="@+id/Type"
