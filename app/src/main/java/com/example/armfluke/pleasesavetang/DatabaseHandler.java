@@ -5,7 +5,6 @@ package com.example.armfluke.pleasesavetang; /**
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -37,6 +36,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
                 + KEY_Username + " TEXT PRIMARY KEY," + KEY_Password + " TEXT" + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
+        String createActivityTable = "CREATE TABLE Activity(ID INTEGER PRIMARY KEY AUTOINCREMENT,Username TEXT,Amount TEXT,Note TEXT,Date TEXT,Type TEXT)";
+        db.execSQL(createActivityTable);
     }
 
     // Upgrading database
@@ -44,7 +45,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
-
+        db.execSQL("DROP TABLE IF EXISTS Activity");
         // Create tables again
         onCreate(db);
     }
@@ -57,13 +58,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     void addContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("INSERT INTO "+TABLE_CONTACTS+" VALUES ('"+contact.getUsername()+"','"+contact.getPassword()+"')");
-        /*ContentValues values = new ContentValues();
-        values.put(KEY_Username, contact.getUsername());
-        values.put(KEY_Password, contact.getPassword());*/
-
-        // Inserting Row
-        //db.insert(TABLE_CONTACTS, null, values);
-        //db.close(); // Closing database connection
     }
 
     // Getting single contact
@@ -79,6 +73,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         // return contact
         return contact;
+    }
+
+    void addActivity(String Username,String Amount,String Note,String Date,String Type){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("INSERT INTO Activity(Username,Amount,Note,Date,Type) VALUES('"+Username+"','"+Amount+"','"+Note+"','"+Date+"','"+Type+"')");
     }
 
     // Getting All Contacts
@@ -108,11 +107,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Updating single contact
     public int updateContact(Contact contact,String username) {
         SQLiteDatabase db = this.getWritableDatabase();
-
-        //ContentValues values = new ContentValues();
-        //values.put(KEY_Username, contact.getUsername());
-        //values.put(KEY_Password, contact.getPassword());
-
         // updating row
         db.execSQL("UPDATE "+TABLE_CONTACTS+" SET +"+KEY_Username+"='"+username+"' AND "+KEY_Password+"='"+contact.getPassword()+"' WHERE Username='"+contact.getUsername()+"'");//db.update(TABLE_CONTACTS, values, KEY_Username + " = ?", new String[] { contact.getUsername() });
         return 0;
@@ -122,8 +116,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void deleteContact(String username) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM "+TABLE_CONTACTS+" WHERE "+KEY_Username+"='"+username+"'");
-        //db.delete(TABLE_CONTACTS, KEY_Username + " = ?", new String[] { username });
-        //db.close();
     }
 
 

@@ -29,15 +29,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -47,26 +38,24 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*Button login = (Button)findViewById(R.id.GoLogin);
-
-        login.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Login.class);
-                startActivity(intent);
-            }
-        });*/
-    }
-
-    public void changeActivity(View view){
         SharedPreferences sharedpreferences = getSharedPreferences("ID", Context.MODE_PRIVATE);
         String username = sharedpreferences.getString("Username",null);
+        TextView Username = (TextView) findViewById(R.id.Username);
+        Username.setText("Username: "+username);
+}
 
-        TextView test = (TextView) findViewById(R.id.Test);
-        test.setText(username);
-        //Intent intent = new Intent(MainActivity.this, Login.class);
-        //startActivity(intent);
+    public void changeActivity(View view){
+        Intent intent = new Intent(MainActivity.this, AddActivity.class);
+        startActivity(intent);
+    }
+
+    public void logout(View view){
+        SharedPreferences sharedpreferences = getSharedPreferences("ID", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.clear();
+        editor.commit();
+        Intent intent = new Intent(MainActivity.this, Login.class);
+        startActivity(intent);
     }
 
     @Override

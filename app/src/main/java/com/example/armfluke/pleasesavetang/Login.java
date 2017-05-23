@@ -22,23 +22,11 @@ public class Login extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //DatabaseHandler db = new DatabaseHandler(this);
-        //EditText username = (EditText)findViewById(R.id.Username);
-        //EditText password = (EditText)findViewById(R.id.Password);
-        /*final DatabaseHandler db = new DatabaseHandler(this);
-        Button login = (Button)findViewById(R.id.Login);
-
-        login.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                db.addContact(new Contact("admin","admin"));
-                Contact information = db.getContact("admin");
-                TextView txtView = (TextView) findViewById(R.id.PleaseSaveTang);
-                txtView.setText(information.getUsername());
-            }
-        });*/
+        SharedPreferences sharedpreferences = getSharedPreferences("ID", Context.MODE_PRIVATE);
+        if(sharedpreferences.contains("Username")){
+            Intent intent = new Intent(Login.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void login(View v){
@@ -46,11 +34,8 @@ public class Login extends AppCompatActivity {
         EditText username = (EditText)findViewById(R.id.Username);
         EditText password = (EditText)findViewById(R.id.PasswordText);
 
-        //db.addContact(new Contact("admin","admin"));
-        Contact information = db.getContact("admin");
+        Contact information = db.getContact(username.getText().toString());
         if(information.getUsername().equals(username.getText().toString()) && information.getPassword().equals(password.getText().toString())){
-            //TextView txtView = (TextView) findViewById(R.id.PleaseSaveTang);
-            //txtView.setText(information.getUsername());
             SharedPreferences sharedpreferences = getSharedPreferences("ID", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putString("Username",information.getUsername());

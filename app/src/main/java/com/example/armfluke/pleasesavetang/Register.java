@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.content.Intent;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -22,10 +21,7 @@ public class Register extends AppCompatActivity {
         EditText username = (EditText)findViewById(R.id.Username);
         EditText password = (EditText)findViewById(R.id.Password);
         EditText passwordRe = (EditText)findViewById(R.id.PasswordRe);
-        //Contact information = db.getContact("admin");
         Contact qusername = db.getContact(username.getText().toString());
-        //TextView usernameText = (TextView) findViewById(R.id.UsernameText);
-        //usernameText.setText(qusername.getUsername());
 
         if(password.equals(passwordRe.getText().toString())) {
 
@@ -41,8 +37,6 @@ public class Register extends AppCompatActivity {
             alertDialog.show();
         }else{
             if (qusername.getUsername().equals(username.getText().toString())) {
-                //TextView usernameText = (TextView) findViewById(R.id.UsernameText);
-                //usernameText.setText(qusername.getUsername());
                 AlertDialog alertDialog = new AlertDialog.Builder(Register.this).create();
                 alertDialog.setTitle("Alert");
                 alertDialog.setMessage("Your username is already existed");

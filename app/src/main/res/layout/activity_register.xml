@@ -17,18 +17,16 @@
         android:inputType="textPersonName"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="40dp"
+        app:layout_constraintRight_toRightOf="@+id/Password"
+        android:layout_marginTop="41dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/Password"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/PasswordText"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="29dp"
         android:text="Password:"
         android:textSize="20sp"
         android:layout_marginStart="16dp"
@@ -37,13 +35,12 @@
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/PasswordReText"
-        android:layout_marginTop="73dp"
+        app:layout_constraintBottom_toTopOf="@+id/PasswordReText"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@+id/UsernameText"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="73dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/UsernameText"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginBottom="42dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/Password"
@@ -54,13 +51,11 @@
         android:inputType="textPassword"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/PasswordRe"
         android:layout_marginTop="38dp"
         app:layout_constraintTop_toBottomOf="@+id/Username"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/PasswordRe"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintLeft_toLeftOf="@+id/PasswordRe" />
 
 
     <EditText
@@ -74,22 +69,23 @@
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="27dp"
-        app:layout_constraintTop_toBottomOf="@+id/Password"
-        android:layout_marginRight="42dp" />
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/Password" />
 
     <Button
         android:id="@+id/Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="54dp"
         android:onClick="back"
         android:text="Back"
+        app:layout_constraintRight_toLeftOf="@+id/Register"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="57dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/Register"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="73dp" />
+        app:layout_constraintLeft_toLeftOf="@+id/PasswordReText" />
 
     <Button
         android:id="@+id/Register"
@@ -97,37 +93,27 @@
         android:layout_height="wrap_content"
         android:onClick="register"
         android:text="Register"
-        android:layout_marginEnd="81dp"
+        android:layout_marginEnd="39dp"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="172dp"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintTop_toTopOf="@+id/Password"
-        android:layout_marginRight="81dp"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintBottom_toTopOf="@+id/Register" />
+        app:layout_constraintRight_toRightOf="@+id/PasswordRe"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordRe" />
 
     <TextView
         android:id="@+id/UsernameText"
-        android:layout_width="104dp"
+        android:layout_width="0dp"
         android:layout_height="25dp"
         android:text="Username:"
         android:textSize="20sp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="12dp"
         app:layout_constraintRight_toLeftOf="@+id/Username"
-        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Username"
-        android:layout_marginEnd="5dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Username"
+        tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.695"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/PasswordReText"
@@ -135,17 +121,13 @@
         android:layout_height="46dp"
         android:text="Confirmed Password:"
         android:textSize="17sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintRight_toLeftOf="@+id/PasswordRe"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Back"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="105dp"
-        app:layout_constraintTop_toBottomOf="@+id/UsernameText"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="104dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PasswordRe" />
 
 </android.support.constraint.ConstraintLayout>
